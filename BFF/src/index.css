@@ -1,12 +1,148 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* === Global Reset & Base === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* your palette */
+:root{
+  --c1: #86a3be; /* steel blue */
+  --c2: #8fbfc2; /* teal mist */
+  --c3: #afd7c2; /* mint */
+  --ink: #0e1a22;         /* dark text */
+  --ink-muted: #1f2e36;   /* muted text */
+  --panel: #ffffff;       /* cards/buttons */
+  --hairline: #d9e7ea;    /* borders */
 }
 
-html, body {
+html, body, #root {
   height: 100%;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f7fbfc; /* neutral page bg (no stripes) */
+  color: var(--ink);
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: color-mix(in srgb, var(--c1) 85%, white 15%); /* use palette */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--c1) 50%, white 50%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  color: #fff; /* good contrast on c1 */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  font-weight: 600;
+  color: #f0f6f8;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* === Hero Section === */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 2rem;
+  /* subtle hero using palette (not stripes) */
+  background: radial-gradient(80% 70% at 50% 20%, var(--c3) 0%, var(--c2) 50%, var(--c1) 100%);
+  border-bottom: 1px solid color-mix(in srgb, var(--c1) 40%, white 60%);
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0b1b22;
+}
+
+#join-btn {
+  margin-top: 1rem;
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* accent hover uses palette */
+#join-btn:hover {
+  background: color-mix(in srgb, var(--c3) 30%, white 70%);
+  transform: translateY(-2px);
+}
+
+/* === About Section === */
+#about {
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#about h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--c1);
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.0;
+  color: var(--ink-muted);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--c3) 30%, white 70%);
+}
+
+/* (optional) remove glow animation since we changed styling */
+@keyframes pulse { from {opacity:1} to {opacity:1} }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  nav ul { gap: 1rem; }
+  #hero h2 { font-size: 2rem; }
+  #about h3 { font-size: 1.5rem; }
 }
