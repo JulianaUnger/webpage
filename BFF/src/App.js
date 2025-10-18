@@ -60,7 +60,7 @@ export default function App() {
         <h3>About Us</h3>
         
           At <strong>BeFitFriends</strong>, our mission is simple — to connect people through
-          fitness. We believe staying active is easier (and more fun) when you have someone by your
+          fitness. We believe staying active is easier when you have someone by your
           side who shares your energy and passion. Whether you love running at sunrise, lifting at
           the gym, hiking new trails, or joining a yoga class, BeFitFriends helps you find others
           who enjoy the same activities you do.
