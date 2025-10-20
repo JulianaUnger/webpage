@@ -20,6 +20,8 @@ const pill = {
 export default function JoinModal({ open, onClose }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [location, setLocation] = useState(""); // city + state
   const [skill, setSkill] = useState("Beginner");
   const [activities, setActivities] = useState([]);
   const [other, setOther] = useState("");
@@ -39,11 +41,11 @@ export default function JoinModal({ open, onClose }) {
 
   const submit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) {
-      alert("Please enter your name and email.");
+    if (!name.trim() || !email.trim() || !age.trim() || !location.trim()) {
+      alert("Please fill out all required fields (name, email, age, city/state).");
       return;
     }
-    const payload = { name, email, skill, activities, other };
+    const payload = { name, email, age, location, skill, activities, other };
     console.log("Join form:", payload);
     alert("Thanks for joining BeFitFriends! We’ll reach out with early access details soon.");
     onClose();
@@ -54,13 +56,14 @@ export default function JoinModal({ open, onClose }) {
     "Gym/Weights",
     "Yoga/Pilates",
     "Hiking",
-    "Cycling",
+    "Cycling/Biking",
     "Swimming",
     "CrossFit",
     "Rock Climbing",
     "Basketball",
-    "Tennis",
-    "Pickleball",
+    "Walking",
+    "Football",
+    "Paddle Boarding/Surfing"
   ];
 
   return (
@@ -93,8 +96,7 @@ export default function JoinModal({ open, onClose }) {
         <h3 style={{ marginBottom: ".25rem", color: "#86a3be" }}>Join BeFitFriends</h3>
         <p style={{ margin: 0, color: "#1f2e36" }}>
           Want to be part of our <strong>first group</strong> using the app?
-          Add your details below to get early access — you’ll always have company for whatever
-          activity you enjoy, and it’s a great way to meet new friends.
+          Add your details below for access
         </p>
 
         <form onSubmit={submit} style={{ marginTop: "0.9rem" }}>
@@ -123,17 +125,54 @@ export default function JoinModal({ open, onClose }) {
             </div>
           </div>
 
+          {/* Age + City/State */}
+          <div style={{ display: "grid", gap: "0.8rem", gridTemplateColumns: "1fr 1fr", marginTop: ".9rem" }}>
+            <div>
+              <label>Age</label>
+              <input
+                type="number"
+                min="13"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+                placeholder="25"
+                style={field}
+              />
+            </div>
+            <div>
+              <label>City, State</label>
+              <input
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                required
+                placeholder="Boca Raton, FL"
+                style={field}
+              />
+            </div>
+          </div>
+
           {/* Activities */}
           <div style={{ marginTop: ".9rem" }}>
             <label>Activities you like</label>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: ".5rem .8rem", marginTop: ".4rem" }}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: ".5rem .8rem",
+                marginTop: ".4rem",
+              }}
+            >
               {opts.map((o) => (
                 <label
                   key={o}
                   style={{
                     ...pill,
-                    border: activities.includes(o) ? "2px solid #8fbfc2" : pill.border,
-                    background: activities.includes(o) ? "#afd7c2" : pill.background,
+                    border: activities.includes(o)
+                      ? "2px solid #8fbfc2"
+                      : pill.border,
+                    background: activities.includes(o)
+                      ? "#afd7c2"
+                      : pill.background,
                   }}
                 >
                   <input
@@ -147,29 +186,26 @@ export default function JoinModal({ open, onClose }) {
             </div>
           </div>
 
-          {/* Skill + Other */}
-          <div style={{ display: "grid", gap: "0.8rem", gridTemplateColumns: "1fr 1fr", marginTop: ".9rem" }}>
-            <div>
-              <label>Skill level</label>
-              <select value={skill} onChange={(e) => setSkill(e.target.value)} style={field}>
-                {["Beginner", "Intermediate", "Advanced"].map((s) => (
-                  <option key={s}>{s}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label>Other activities (optional)</label>
-              <input
-                value={other}
-                onChange={(e) => setOther(e.target.value)}
-                placeholder="CrossFit, rowing, dance…"
-                style={field}
-              />
-            </div>
+          {/* Other Activities */}
+          <div style={{ marginTop: ".9rem" }}>
+            <label>Other activities (optional)</label>
+            <input
+              value={other}
+              onChange={(e) => setOther(e.target.value)}
+              placeholder="CrossFit, rowing, dance…"
+              style={field}
+            />
           </div>
 
           {/* Actions */}
-          <div style={{ display: "flex", justifyContent: "flex-end", gap: ".6rem", marginTop: "1rem" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: ".6rem",
+              marginTop: "1rem",
+            }}
+          >
             <button
               type="button"
               className="btn"
