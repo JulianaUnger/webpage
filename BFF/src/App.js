@@ -56,26 +56,30 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about">
-        <h3>About Us</h3>
-        
-          At <strong>BeFitFriends</strong>, our mission is simple — to connect people through
-          fitness. We believe staying active is easier when you have someone by your
-          side who shares your energy and passion. Whether you love running at sunrise, lifting at
-          the gym, hiking new trails, or joining a yoga class, BeFitFriends helps you find others
-          who enjoy the same activities you do.
-        
-        
-          Through personalized profiles, you can match with people based on your fitness interests,
-          goals, and skill levels — creating real connections beyond the screen. You’ll always have
-          company, no matter what kind of movement you enjoy, and every workout becomes a chance to
-          meet new friends, stay motivated, and grow stronger together.
-        
+<section
+  id="about"
+  style={{
+    lineHeight: "1.8",
+    fontSize: "1.1rem",
+    color: "#1f2e36",
+    whiteSpace: "pre-line",
+  }}
+>
+  <h3 style={{ color: "#86a3be", marginBottom: "1rem" }}>About Us</h3>
+
+  At <strong>BeFitFriends</strong>, our mission is simple — to connect people through fitness.
+  <br /><br />
+  We believe that finding someone who shares your energy and passion makes staying active easier, and more fun!
+  <br /><br />
+  Whether you love running at sunrise, lifting at the gym, hiking new trails, or exploring new activities, BeFitFriends helps you match with others who share your interests and goals, making every workout a chance to meet new friends, stay motivated, and grow stronger together.
+  <br /><br />
+  Want to receive early access?
+  <br />
+  <strong style={{ color: "#86a3be" }}>Join the movement!</strong>
+</section>
+
+    
       
-          Interested in becoming part of our first group to use BeFitFriends? We’d love to have you
-          join the movement — your fitness journey starts here!
-        
-      </section>
 
       {/* FOOTER */}
       <footer>
