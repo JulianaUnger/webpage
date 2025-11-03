@@ -146,3 +146,29 @@ footer {
   #hero h2 { font-size: 2rem; }
   #about h3 { font-size: 1.5rem; }
 }
+.slider{position:relative}
+.slider-track{display:flex;overflow:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.slider-track::-webkit-scrollbar{display:none}
+.slide-card{min-width:100%;scroll-snap-align:start;background:#fff;border:1px solid var(--hairline);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);padding:18px;display:grid;gap:10px}
+.slide-head{display:flex;align-items:center;gap:12px}
+.slide-emoji{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb, var(--c2) 60%, white 40%);font-size:22px}
+.slide-title{font-weight:800}
+.slide-meta{color:var(--ink-muted);font-size:.9rem}
+.slide-text{color:var(--ink-muted);font-size:.95rem}
+.slider-dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.dot{width:8px;height:8px;border-radius:999px;border:0;background:color-mix(in srgb, var(--c1) 35%, white 65%);cursor:pointer}
+.dot-active{width:22px;border-radius:999px;background:var(--c1)}
+
+
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.team-card{background:#fff;border:1px solid var(--hairline);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);padding:16px;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center}
+.team-photo{width:96px;height:96px;border-radius:14px;overflow:hidden;border:1px solid var(--hairline);background:color-mix(in srgb, var(--c2) 30%, white 70%)}
+.team-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.team-info{display:grid;gap:6px}
+.team-name{font-weight:800}
+.team-role{color:var(--c1);font-weight:700}
+.team-bio{color:var(--ink-muted);font-size:.95rem;line-height:1.5}
+.team-links{display:flex;gap:10px;margin-top:4px}
+.team-links a{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--hairline)}
+@media(max-width:1024px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.team-grid{grid-template-columns:1fr}.team-card{grid-template-columns:72px 1fr}.team-photo{width:72px;height:72px}}

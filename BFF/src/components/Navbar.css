@@ -1,31 +1,16 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #101820;
-    color: #fff;
-    padding: 1rem 2rem;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #00aaff;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #00aaff;
-  }
+.nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb, var(--c1) 85%, white 15%);backdrop-filter:blur(10px);border-bottom:1px solid color-mix(in srgb, var(--c1) 50%, white 50%);transition:box-shadow .2s ease}
+.nav-scrolled{box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:.3px;color:#fff}
+.nav-links{display:flex;gap:1.25rem;align-items:center}
+.nav-links a{color:#f0f6f8;font-weight:600}
+.nav-links a:hover{color:#fff}
+.hamburger{display:none;border:0;background:transparent;padding:8px;border-radius:10px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;border-radius:2px}
+.mobile-menu{display:none;border-top:1px solid color-mix(in srgb, var(--c1) 45%, white 55%);padding:10px 0}
+.mobile-menu a{display:block;padding:12px 0;color:#0e1a22}
+@media(max-width:880px){
+  .nav-links{display:none}
+  .hamburger{display:inline-grid}
+  .mobile-menu{display:block}
+}

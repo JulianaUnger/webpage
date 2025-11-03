@@ -1,0 +1,16 @@
+export default function About() {
+  return (
+    <section
+      id="about"
+      style={{ lineHeight: "1.8", fontSize: "1.1rem", color: "#1f2e36", whiteSpace: "pre-line" }}
+    >
+      <h3 style={{ color: "#86a3be", marginBottom: "1rem" }}>About Us</h3>
+      <p style={{ background: "var(--panel)", border: "1px solid var(--hairline)", borderRadius: "16px", padding: "1.25rem 1.4rem", color: "var(--ink-muted)" }}>
+        At BeFitFriends, our mission is simple — to connect people through fitness.
+        We believe that finding someone who shares your energy and passion makes staying active easier, and more fun!
+        Whether you love running at sunrise, lifting at the gym, hiking new trails, or exploring new activities, BeFitFriends helps you match with others who share your interests and goals, making every workout a chance to meet new friends, stay motivated, and grow stronger together.
+        Want to receive early access? Join the movement!
+      </p>
+    </section>
+  );
+}
