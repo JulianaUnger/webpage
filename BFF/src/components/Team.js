@@ -14,7 +14,7 @@ const people = [
     links: { linkedin: "#", x: "#" }
   },
   {
-    name: "Scarlett Valencia Pulido",
+    name: "Scarlett Valencia",
     role: "Co-Founder • Community & Ops",
     img: require("../assets/team/scarlett.jpg"),
     bio: "Community builder who turns ideas into thriving movements.",
